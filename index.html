@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>滑稽主页</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/vue.min.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <img src="img/single.png" rel="worng" width="100" height="100">
+        <p class="p1">{{ name }}</p>
+        <!-- <input type="text" placeholder="用户名" :title="username_title"><br />
+        <input type="password" placeholder="密码" :title="password_title"><br /> -->
+        <!-- 原本的账号密码框 -->
+        <p class="p2">{{ msg }}</p><!-- 一行字 -->
+        <button @click="up">{{ login }}</button><!-- 原本的登陆按钮，现为启动 -->
+        <button @click="down">{{ register }}</button><br /><!-- 原本的注册按钮，现为停止 -->
+        <form action="http://www.baidu.com/baidu" target="_blank">
+            <!-- 搜索框 -->
+            <input name=tn type=hidden value=baidu>
+            <input type="text" name=word placeholder="滑稽搜索引擎(其实是百度)">
+        </form>
+    </div>
+    <br/>
+    <!-- 画布 -->
+    <!-- <div> 
+        <canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;">
+            挂了
+        </canvas>
+    </div> -->
+    <div id="time"><!-- 选择时间，改变背景 -->
+        <p class="p1">{{ name }}</p>
+        <p class="p2">{{ msg1 }}</p>
+        <p class="p2">{{ msg2 }}</p>
+        <input type="date" id="myDate" v-model:value="time">
+        <button style="width: 4em;" @click="timefunc">确定</button>
+    </div>
+    <br/>
+
+    <div id="calculator"><!-- 滑稽计算器 -->
+        <p1 class="p1">{{ name }}</p1>
+        <input type="text" v-model="n1" onfocus="select()">
+
+        <select v-model="option">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        
+        <input type="text" v-model="n2" onfocus="select()">
+        <button style="width: 4em;" @click="calculate">=</button>
+        <br/>
+        <p>{{ result }}</p>
+    </div>
+
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
+
+
+

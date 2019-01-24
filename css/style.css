@@ -1,0 +1,144 @@
+        *{ margin:0px auto;}
+        body{
+            background-color: rgb(253,209,110);
+            background-image: url(https://bing.ioliu.cn/v1?d=0);
+            background-repeat: repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+            text-align: center;
+        }
+        .p1{
+            font-weight: bold;
+            font-size: 3em;
+            color: #FF8C00;
+            text-align: center;
+            display: block;
+            font-family: "SimHei";
+        }
+        .p2{
+            font-size: 20px;
+            color: rgb(255, 94, 0);
+            text-align: center;
+            display: block;
+            font-family: "SimHei";
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        div{
+            background-color: #F5DEB3;
+            display: inline-block;
+            text-align: center;
+            padding: 3em;
+            margin: 2em ;
+            border-radius: 2em ;
+            width: 350px;
+        }
+        input{
+            background:rgba(0,0,0,0) ;
+            border-style: none;
+            border-bottom-style: solid;
+            border-bottom-color: #FFA500;
+            border-width: thin;
+            height: 2em;
+            width: 15em;
+            margin: 0.5em 0 0.5em 0;
+            outline: none;
+            text-align: center;
+            border-radius: 30px;
+        }
+        input:hover{
+            background-color: #FFE7BA;
+        }
+        input:focus{
+            background-color: rgb(240, 183, 62);
+            border-bottom-color: #8B7E66;
+        }
+        button{
+            background-color: #F4A460;
+            border-style: solid;
+            border-color: #EE7942;
+            border-radius: 10em;
+            width: 6em;
+            height: 2em;
+            margin-top: 1em;
+            color: aliceblue;
+            outline: none;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+            margin-bottom: 2em;
+        }
+        button:hover{
+            background-color: #EE7942;
+            border-color: #EE7942
+        }
+        button:active{
+            background-color: #8B4513;
+            font-weight: bold;
+        }
+
+
+
+        canvas{/* 画布 */
+            width: 600px;
+            height: 300px;
+            background-repeat: no-repeat;
+        }
+
+        
+
+        #calculator input{
+            width: 70px;
+        }
+
+
+        select {/* 以下是选项 */
+            display: inline-block;
+            width: 40px;
+            height: 27px;
+            position: relative;
+            vertical-align: middle;
+            padding: 0;
+            overflow: hidden;
+            background-color: #F4A460;
+            color: rgb(255, 255, 255);
+            border: 1px solid #aaa;
+            text-shadow: none;
+            border-radius: 30px;	
+            transition: box-shadow 0.25s ease;
+            z-index: 2;
+            border-color: #EE7942;
+            border-width: 2px;
+        }
+
+        select:hover {
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+            background-color: #EE7942;
+            border-color: #EE7942
+        }
+     
+        select:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-top-color: #ccc;
+            top: 14px;
+            right: 10px;
+            cursor: pointer;
+            z-index: -2;
+        }
+        select select {
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            background: transparent;
+            background-image: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+     
+        select select:focus {
+            outline: none;
+        }
