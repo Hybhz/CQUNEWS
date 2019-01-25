@@ -93,11 +93,11 @@ var vm3 = new Vue({
     },
     methods:{
         timefunc(){
-            var time1 = this.time + ' 16:00:00';
+            var time1 = this.time + ' 00:00:00';
             this.iDays = dateDiff(time1);
             this.url1 = 'https://bing.ioliu.cn/v1?d=' + this.iDays;
             document.body.style.backgroundImage="url("+ this.url1 +")";//"+ url1 +"
-            if((Date.parse(new Date(time1))-57600000)>Date.parse(new Date())) alert('叫你别输未来的时间');
+            if((Date.parse(new Date(time1)))>Date.parse(new Date())) alert('叫你别输未来的时间');
         }
     }
 });
