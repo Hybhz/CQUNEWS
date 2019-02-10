@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,17 +6,22 @@
     <title>滑稽主页</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/vue.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
 
 <body>
+    <div id="weather" class="weather">
+        <iframe src="https://www.weaoo.com/cj/index.html?layout=layout1_transparent-classic" width="390" height="60" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowTransparency="true"></iframe>  
+    </div>
 
-    <div id="app">
+    <div id="app" class="div1">
+            <p class="p3">{{ msg1 }}</p>
         <img src="img/single.png" rel="worng" width="100" height="100">
         <p class="p1">{{ name }}</p>
         <!-- <input type="text" placeholder="用户名" :title="username_title"><br />
         <input type="password" placeholder="密码" :title="password_title"><br /> -->
         <!-- 原本的账号密码框 -->
-        <p class="p2">{{ msg }}</p><!-- 一行字 -->
+        <p class="p2">{{ msg2 }}</p><!-- 一行字 -->
         <button @click="up">{{ login }}</button><!-- 原本的登陆按钮，现为启动 -->
         <button @click="down">{{ register }}</button><br /><!-- 原本的注册按钮，现为停止 -->
         <form action="http://www.baidu.com/baidu" target="_blank">
@@ -32,7 +37,7 @@
             挂了
         </canvas>
     </div> -->
-    <div id="time"><!-- 选择时间，改变背景 -->
+    <div id="time" class="div1"><!-- 选择时间，改变背景 -->
         <p class="p1">{{ name }}</p>
         <p class="p2">{{ msg1 }}</p>
         <p class="p2">{{ msg2 }}</p>
@@ -41,7 +46,7 @@
     </div>
     <br/>
 
-    <div id="calculator"><!-- 滑稽计算器 -->
+    <div id="calculator" class="div1"><!-- 滑稽计算器 -->
         <p1 class="p1">{{ name }}</p1>
         <input type="text" v-model="n1" onfocus="select()">
 
