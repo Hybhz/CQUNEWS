@@ -21,11 +21,11 @@ var vm1 = new Vue({
     methods:{
         up(){
             if(this.intervalId != null) return;
-            var _this = this
+            var _this = this;
             this.intervalId = setInterval(function(){
-                var start = _this.msg.substring(0,1);
-                var end = _this.msg.substring(1);
-                _this.msg = end + start;
+                var start = _this.msg2.substring(0,1);
+                var end = _this.msg2.substring(1);
+                _this.msg2 = end + start;
             },100)
         },
         down(){
@@ -165,7 +165,7 @@ window.onmousewheel = document.onmousewheel = scrollFunc;
 
 
 //以下适配手机手指操作，不知道行不行...
-$("body").on("touchstart", function(e) {
+/* $("body").on("touchstart", function(e) {
     e.preventDefault();
     startX = e.originalEvent.changedTouches[0].pageX,
     startY = e.originalEvent.changedTouches[0].pageY;
@@ -197,6 +197,6 @@ var windowHeight = $(window).height(),
 　　$body = $("body");
 　　// console.log($(window).height()); //627
 　　// console.log($('body').height()); //0
-　　$body.css("height", windowHeight); //重要代码
+　　$body.css("height", windowHeight); //重要代码 */
 
 
