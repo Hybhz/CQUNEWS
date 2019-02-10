@@ -14,7 +14,8 @@ var vm1 = new Vue({
         register: '不骚了',
         username_title: '请输入用户名',
         password_title: '请输入密码',
-        msg: '滑稽树上滑稽果，滑稽树下你和我。',
+        msg1: '↓鼠标下滚就能看天气',
+        msg2: '滑稽树上滑稽果，滑稽树下你和我。',
         intervalId: null,
     },
     methods:{
@@ -98,6 +99,7 @@ var vm3 = new Vue({
             this.url1 = 'https://bing.ioliu.cn/v1?d=' + this.iDays;
             document.body.style.backgroundImage="url("+ this.url1 +")";//"+ url1 +"
             if((Date.parse(new Date(time1)))>Date.parse(new Date())) alert('叫你别输未来的时间');
+            if((Date.parse(new Date(time1)))<1457107200000) alert('叫你输这之后的时间');
         }
     }
 });
@@ -118,4 +120,83 @@ var vm3 = new Vue({
     iDays = parseInt((oDate1 - oDate2) / 1000 / 60 / 60 / 24); //把相差的毫秒数转换为天数
     return iDays;  //返回相差天数
 }; */
+
+/* $(document).ready(function(){ //1方法失败
+    var p=0,t=0;
+        $(window).scroll(function(){
+            p=$(this).scrollTop();
+            if(t<p){
+                document.getElementById('weather').style.display = "block";
+            }else{
+                document.getElementById('weather').style.display = "none";
+                  //上滚            
+                }
+           setTimeout(function(){ t = p ; },0)
+      })
+}) */
+
+
+//以下为下滚显示天气
+var scrollFunc = function (e) {
+    e = e || window.event;
+    if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件             
+        if (e.wheelDelta > 0) { //当滑轮向上滚动时
+            document.getElementById('weather').style.display = "none";;
+        }
+        if (e.wheelDelta < 0) { //当滑轮向下滚动时
+            document.getElementById('weather').style.display = "block";;
+        }
+    } else if (e.detail) {  //Firefox滑轮事件
+        if (e.detail> 0) { //当滑轮向上滚动时
+            document.getElementById('weather').style.display = "none";;
+        }
+        if (e.detail< 0) { //当滑轮向下滚动时
+            document.getElementById('weather').style.display = "block";;
+        }
+    }
+}
+//给页面绑定滑轮滚动事件
+if (document.addEventListener) {//firefox
+    document.addEventListener('DOMMouseScroll', scrollFunc, false);
+}
+//滚动滑轮触发scrollFunc方法  //ie 谷歌
+window.onmousewheel = document.onmousewheel = scrollFunc;
+
+
+
+//以下适配手机手指操作，不知道行不行...
+$("body").on("touchstart", function(e) {
+    e.preventDefault();
+    startX = e.originalEvent.changedTouches[0].pageX,
+    startY = e.originalEvent.changedTouches[0].pageY;
+});
+$("body").on("touchmove", function(e) {
+    e.preventDefault();
+    moveEndX = e.originalEvent.changedTouches[0].pageX,
+    moveEndY = e.originalEvent.changedTouches[0].pageY,
+    X = moveEndX - startX,
+    Y = moveEndY - startY;
+
+    if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
+    　　alert("left 2 right");
+    }
+    else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
+    　　alert("right 2 left");
+    }
+    else if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
+    　　alert("top 2 bottom");
+    }
+    else if ( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
+    　　alert("bottom 2 top");
+    }
+    else{
+    　　alert("just touch");
+    }
+});
+var windowHeight = $(window).height(),
+　　$body = $("body");
+　　// console.log($(window).height()); //627
+　　// console.log($('body').height()); //0
+　　$body.css("height", windowHeight); //重要代码
+
 
